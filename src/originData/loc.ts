@@ -1,5 +1,5 @@
 interface Al10n {
-  key: 'en' | 'cs';
+  key: 'en' | 'cs' | 'zhCN';
   name: string;
   title: string;
   // Index
@@ -76,8 +76,35 @@ const localisation: Al10n[] = [
     instructions_gotitbutton: 'Chápu!',
     instructions_nevermind: 'Počkat, zapomeňte na to.',
   },
+  {
+    key: 'zhCN',
+    name: '简体中文',
+    title: 'Ideosorter',
+    index_startbutton: '点击开始',
+    index_text: [
+      {
+        title: 'Ideosorter 是什么？',
+        content:
+          'Ideosorter 本质上是一个政治测验，它将通过向你提出问题来得出一个与你的观点最接近的意识形态。这个测试将基于流程图模型，根据你对这些问题的回答，把你的政治立场分为57种不同意识形态之一。也许你会发现一些你自己都不知道的东西！',
+      },
+      {
+        title: '有个问题我不知道！',
+        content:
+          '作者们已经尽量使任何术语容易查找。如果你有什么不明白的地方，请告诉作者，这样他们就可以做一些修改。',
+      },
+      { title: '我不喜欢我被匹配到的意识形态！', content: '¯_(ツ)_/¯' },
+    ],
+    index_contacts_text: '作者',
+    index_contacts: ['TheGhostOfInky#9229', 'theghostofinky@gmail.com'],
+    index_contacts_ghpage: {
+      link: 'https://github.com/Ideosorter/ideosorter.github.io',
+      text: 'GitHub 页面',
+    },
+    instructions_title: '说明',
+    instructions_text: '你将会面对一系列单选题。请根据你的观点，选出最符合的一项。',
+    instructions_gotitbutton: '懂了',
+    instructions_nevermind: '就当我没来过',
+  },
 ];
-
-export type L10ns = keyof typeof localisation;
 
 export default localisation;

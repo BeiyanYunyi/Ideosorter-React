@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import localisation from '../originData/loc';
 
 const HomePage = () => {
-  const text = ['Select your language', 'Vyberte jazyk'];
+  const text = ['Select your language', 'Vyberte jazyk', '选择你的语言'];
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const intervalId = setInterval(() => {

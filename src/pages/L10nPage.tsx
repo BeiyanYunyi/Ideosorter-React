@@ -23,7 +23,9 @@ const L10nPage = () => {
       </div>
       {l10nInfo.index_text.map((para) => (
         <div key={para.title}>
-          <Typography variant="h4">{para.title}</Typography>
+          <Typography variant="h4" sx={{ marginTop: 2 }} gutterBottom>
+            {para.title}
+          </Typography>
           <Typography gutterBottom>{para.content}</Typography>
         </div>
       ))}
