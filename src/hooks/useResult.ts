@@ -9,7 +9,9 @@ const useResult = () => {
   if (!result) return null;
   return {
     name: result.name,
-    result: result[`result_${l10nKey}`] || result.desc_en,
+    // @ts-ignore
+    result: result[`result_${l10nKey}`] || result.result_en,
+    // @ts-ignore
     desc: result[`desc_${l10nKey}`] || result.desc_en,
   };
 };
