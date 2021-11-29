@@ -32,7 +32,7 @@ const localisation: Al10n[] = [
         content:
           "If there's anything you don't understand, we've tried to make any terminology easily looked up, and if it's still not clear, tell us so we can make some changes to the questions!",
       },
-      { title: "I don't like my matched ideology!", content: '¯_(ツ)_/¯' },
+      { title: "I don't like my matched ideology!", content: '¯\\_(ツ)_/¯' },
     ],
     index_contacts_text: 'Contacts:',
     index_contacts: ['TheGhostOfInky#9229', 'theghostofinky@gmail.com'],
@@ -62,7 +62,7 @@ const localisation: Al10n[] = [
         content:
           'Pokud něčemu nerozumíte, pokusili jsme se použit snadno dohledatelnou terminologii, ale pokud je něco pořád nejasné, dejte nám vědět, abychom to mohli napravit!',
       },
-      { title: 'Nelíbí se mi moje přiřazená ideologie!', content: '¯_(ツ)_/¯' },
+      { title: 'Nelíbí se mi moje přiřazená ideologie!', content: '¯\\_(ツ)_/¯' },
     ],
     index_contacts_text: 'Kontakty:',
     index_contacts: ['TheGhostOfInky#9229', 'theghostofinky@gmail.com'],
@@ -79,7 +79,7 @@ const localisation: Al10n[] = [
   {
     key: 'zhCN',
     name: '简体中文',
-    title: 'Ideosorter',
+    title: 'Ideosorter / 思想筛',
     index_startbutton: '点击开始',
     index_text: [
       {
@@ -92,7 +92,7 @@ const localisation: Al10n[] = [
         content:
           '作者们已经尽量使任何术语容易查找。如果你有什么不明白的地方，请告诉作者，这样他们就可以做一些修改。',
       },
-      { title: '我不喜欢我被匹配到的意识形态！', content: '¯_(ツ)_/¯' },
+      { title: '我不喜欢我被匹配到的意识形态！', content: '¯\\_(ツ)_/¯' },
     ],
     index_contacts_text: '作者',
     index_contacts: ['TheGhostOfInky#9229', 'theghostofinky@gmail.com'],

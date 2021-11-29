@@ -19,9 +19,9 @@ export default {
     result_cs: 'Jste agoristou',
     desc_cs:
       'Agorismus je ideologie vymyšlena Samuelem Edwardem Konkinem III, snažící se nastolit společnost, v níž všechny výměny jsou dobrovolné, prostředkem účastnění se kontraekonomických aktivit.',
-    result_zhCN: '你是农业主义者',
+    result_zhCN: '你是广场主义者',
     desc_zhCN:
-      '农业主义是塞缪尔·爱德华·康金三世构思的一种意识形态，旨在通过从事反经济活动，建立一个所有交换都是自愿的社会。',
+      '广场主义（Agorism）是塞缪尔·爱德华·康金三世构思的一种意识形态，旨在通过从事反经济活动，建立一个所有交换都是自愿的社会。',
   },
   agsoc: {
     result_en: "You're an Agrarian Socialist", // Result 3
@@ -58,9 +58,9 @@ export default {
     result_en: "You're a Geoanarchist", // Result 7
     desc_en:
       'Geo-anarchism is an ideology that advocates for the establishment of a stateless society where private ownership of businesses is present but land is commonly owned and its usage is taxed to a mutual community fund.',
-    result_zhCN: '你是一个土地无政府主义者',
+    result_zhCN: '你是一个无政府乔治主义者',
     desc_zhCN:
-      '土地无政府主义是一种主张建立无国家社会的意识形态，在这种社会中，企业的私有制是存在的，但土地是公有制的，土地使用税被征收为社区互助基金。',
+      '无政府乔治主义是一种主张建立无国家社会的意识形态，在这种社会中，企业的私有制是存在的，但土地是公有制的，土地使用税被征收为社区互助基金。',
   },
   anprim: {
     result_en: "You're an Anarcho-Primitivist", // Result 8

@@ -1,5 +1,6 @@
 export default {
   // don't change this line
+  placeholder: {},
   private_property: {
     question_en: 'Should Private Property exist?',
     question_cs: 'Mělo by soukromé vlastnictví existovat?',
@@ -26,7 +27,7 @@ export default {
   distributism: {
     question_en: 'Should private property be made as widely owned as possible?',
     question_cs: 'Mělo by soukromé vlastnictví být rozšířeno co nejvíce?',
-    question_zhCN: '私有财产应当被尽可能广泛拥有吗？',
+    question_zhCN: '私有财产应当被尽可能广泛分享吗？',
     answers: ['yes', 'no'],
     results: {
       yes: 'distributism',
@@ -62,7 +63,8 @@ export default {
   watchman_state: {
     question_en: 'Should the government purely be a night watchman state?',
     question_cs: 'Měla by vláda být čistě “stát noční hlídky”?',
-    question_zhCN: '政府是否应当只作为守夜人而存在？',
+    question_zhCN:
+      '政府是否应当只作为守夜人而存在？（译注：指仅以保护私有财产、惩处罪犯、保卫主权作为功能）',
     answers: ['yes', 'no'],
     results: {
       yes: 'minarch',
@@ -324,7 +326,7 @@ export default {
   racism: {
     question_en: 'Should communities be made up of ethnically homogenous populations?',
     question_cs: 'Měly by komunity být tvořeny etnicky stejnorodými populacemi?',
-    question_zhCN: '不同种族的人是否可以生活在同一个社区？',
+    question_zhCN: '每个社区都应当由同种族的人组成吗？',
     answers: ['yes', 'no'],
     results: {
       yes: 'natan',
