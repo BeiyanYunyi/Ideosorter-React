@@ -1,6 +1,6 @@
 export default {
   // don't change this line
-  placeholder: {},
+  // placeholder: {},
   private_property: {
     question_en: 'Should Private Property exist?',
     question_cs: 'Mělo by soukromé vlastnictví existovat?',
