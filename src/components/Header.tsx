@@ -1,14 +1,14 @@
-import { Divider, Typography } from '@mui/material';
+import { Box, Heading } from 'grommet';
 import useL10nInfo from '../hooks/useL10nInfo';
 
 const Header = () => {
   const l10nInfo = useL10nInfo();
   return (
     <>
-      <Typography variant="h2" textAlign="center">
-        {l10nInfo.title}
-      </Typography>
-      <Divider sx={{ marginBottom: 1 }} />
+      <Box align="center">
+        <Heading style={{ marginTop: 8, marginBottom: 8 }}>{l10nInfo.title}</Heading>
+      </Box>
+      <hr style={{ marginBottom: 8 }} />
     </>
   );
 };

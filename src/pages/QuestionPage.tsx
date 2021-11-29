@@ -1,5 +1,7 @@
-import { Container, Typography, Paper, Stack, Button } from '@mui/material';
+import { Stack } from '@mui/material';
+import { Button, Card, CardBody, Text } from 'grommet';
 import { useNavigate } from 'react-router-dom';
+import Container from '../components/Container';
 import Header from '../components/Header';
 import useL10nInfo from '../hooks/useL10nInfo';
 import useQuestion from '../hooks/useQuestion';
@@ -12,15 +14,23 @@ const QuestionPage = () => {
   return (
     <Container>
       <Header />
-      <Paper sx={{ padding: 1 }} elevation={1}>
-        <Typography variant="h6">{question.question}</Typography>
-      </Paper>
+      <Card>
+        <CardBody pad="medium">
+          <Text size="large">{question.question}</Text>
+        </CardBody>
+      </Card>
       <Stack spacing={1} sx={{ marginTop: 1 }}>
         {question.options.map((option) => (
           <Button
-            sx={{ fontSize: 36, textTransform: 'none' }}
-            variant="contained"
-            key={option.opt}
+            primary
+            color={option.color}
+            style={{
+              padding: 16,
+              alignContent: 'center',
+              justifyContent: 'center',
+              display: 'inline-flex',
+            }}
+            key={question.name + option.text}
             onClick={() => {
               if (option.isQuestion) {
                 navigate(`/l10n/${l10nInfo.key}/questions/${option.target}`);
@@ -28,9 +38,8 @@ const QuestionPage = () => {
                 navigate(`/l10n/${l10nInfo.key}/results/${option.target}`);
               }
             }}
-          >
-            {option.text}
-          </Button>
+            label={<Text style={{ fontSize: 36 }}>{option.text}</Text>}
+          />
         ))}
       </Stack>
     </Container>

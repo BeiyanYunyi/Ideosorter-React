@@ -1,6 +1,8 @@
-import { Container, Link, Stack, Typography } from '@mui/material';
+import { Link, Stack } from '@mui/material';
+import { Text } from 'grommet';
 import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import Container from '../components/Container';
 import localisation from '../originData/loc';
 
 const HomePage = () => {
@@ -17,15 +19,15 @@ const HomePage = () => {
   return (
     <Container>
       <Stack justifyContent="center">
-        <Typography variant="h4" textAlign="center" gutterBottom>
+        <Text size="2xl" textAlign="center" style={{ marginBottom: 16 }}>
           {text[index]}
-        </Typography>
+        </Text>
         {localisation.map((loc) => (
-          <Typography textAlign="center" gutterBottom key={loc.key}>
+          <Text size="medium" textAlign="center" style={{ marginBottom: 6 }} key={loc.key}>
             <Link component={RouterLink} justifyContent="center" to={`/l10n/${loc.key}`}>
               {loc.name}
             </Link>
-          </Typography>
+          </Text>
         ))}
       </Stack>
     </Container>

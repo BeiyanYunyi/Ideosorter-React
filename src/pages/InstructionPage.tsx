@@ -1,5 +1,7 @@
-import { Button, Container, Paper, Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
+import { Box, Card, CardBody, Text, Button } from 'grommet';
 import { useNavigate } from 'react-router-dom';
+import Container from '../components/Container';
 import Header from '../components/Header';
 import useL10nInfo from '../hooks/useL10nInfo';
 
@@ -9,32 +11,47 @@ const InstructionPage = () => {
   return (
     <Container>
       <Header />
-      <Typography variant="h4" textAlign="center">
-        {l10nInfo.instructions_title}
-      </Typography>
-      <Paper sx={{ padding: 1 }} elevation={1}>
-        <Typography variant="h6">{l10nInfo.instructions_text}</Typography>
-      </Paper>
+      <Box align="center">
+        <Text size="2xl" textAlign="center">
+          {l10nInfo.instructions_title}
+        </Text>
+      </Box>
+      <Card>
+        <CardBody pad="medium">
+          <Text size="large">{l10nInfo.instructions_text}</Text>
+        </CardBody>
+      </Card>
       <Stack spacing={1} sx={{ marginTop: 1 }}>
         <Button
-          sx={{ fontSize: 36, textTransform: 'none' }}
-          variant="contained"
+          primary
+          color="#2196f3"
+          style={{
+            padding: 16,
+            alignContent: 'center',
+            justifyContent: 'center',
+            display: 'inline-flex',
+            color: 'white',
+          }}
           onClick={() => {
             navigate(`/l10n/${l10nInfo.key}/questions/private_property`);
           }}
-        >
-          {l10nInfo.instructions_gotitbutton}
-        </Button>
+          label={<Text style={{ fontSize: 36 }}>{l10nInfo.instructions_gotitbutton}</Text>}
+        />
         <Button
-          sx={{ fontSize: 36, textTransform: 'none' }}
-          variant="contained"
-          color="error"
+          style={{
+            padding: 16,
+            alignContent: 'center',
+            justifyContent: 'center',
+            display: 'inline-flex',
+            color: 'white',
+          }}
+          primary
+          color="red"
           onClick={() => {
             navigate(`/l10n/${l10nInfo.key}`, { replace: true });
           }}
-        >
-          {l10nInfo.instructions_nevermind}
-        </Button>
+          label={<Text style={{ fontSize: 36 }}>{l10nInfo.instructions_nevermind}</Text>}
+        />
       </Stack>
     </Container>
   );

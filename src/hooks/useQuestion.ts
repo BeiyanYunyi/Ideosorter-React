@@ -16,6 +16,7 @@ const useQuestion = () => {
     // @ts-ignore
     target: targetQuestion?.nextquestion[key] as string,
     isQuestion: true,
+    color: buttons.find((btn) => btn.name === key)!.color,
   }));
   const resultOptions = Object.keys(targetQuestion.results).map((key) => ({
     opt: key,
@@ -25,6 +26,7 @@ const useQuestion = () => {
     // @ts-ignore
     target: targetQuestion.results[key] as string,
     isQuestion: false,
+    color: buttons.find((btn) => btn.name === key)!.color,
   }));
   const options = questionOptions.concat(...resultOptions);
   const formattedQuestion = {
