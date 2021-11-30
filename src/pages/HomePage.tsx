@@ -1,4 +1,5 @@
-import { Link, Stack } from '@mui/material';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 import { Text } from 'grommet';
 import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';

@@ -1,5 +1,7 @@
-import { Button, Container, Link, Typography } from '@mui/material';
+import Link from '@mui/material/Link';
+import { Button, Paragraph } from 'grommet';
 import { useNavigate } from 'react-router-dom';
+import Container from '../components/Container';
 import Header from '../components/Header';
 import useL10nInfo from '../hooks/useL10nInfo';
 
@@ -9,37 +11,34 @@ const L10nPage = () => {
   return (
     <Container>
       <Header />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
         <Button
-          variant="outlined"
+          primary
           size="large"
-          sx={{ fontSize: 18 }}
+          style={{ fontSize: 18 }}
           onClick={() => {
             navigate('instructions');
           }}
-        >
-          {l10nInfo.index_startbutton}
-        </Button>
+          label={l10nInfo.index_startbutton}
+        />
       </div>
       {l10nInfo.index_text.map((para) => (
         <div key={para.title}>
-          <Typography variant="h4" sx={{ marginTop: 2 }} gutterBottom>
+          <Paragraph fill margin="none" size="xxlarge">
             {para.title}
-          </Typography>
-          <Typography gutterBottom>{para.content}</Typography>
+          </Paragraph>
+          <Paragraph fill>{para.content}</Paragraph>
         </div>
       ))}
-      <Typography variant="h4">{l10nInfo.index_contacts_text}</Typography>
+      <Paragraph fill margin="none" size="xxlarge">
+        {l10nInfo.index_contacts_text}
+      </Paragraph>
       {l10nInfo.index_contacts.map((para) => (
-        <Typography gutterBottom key={para}>
+        <Paragraph size="small" key={para}>
           {para}
-        </Typography>
+        </Paragraph>
       ))}
-      <Typography>
-        <Link href={l10nInfo.index_contacts_ghpage.link}>
-          {l10nInfo.index_contacts_ghpage.text}
-        </Link>
-      </Typography>
+      <Link href={l10nInfo.index_contacts_ghpage.link}>{l10nInfo.index_contacts_ghpage.text}</Link>
     </Container>
   );
 };

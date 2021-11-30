@@ -1,10 +1,4 @@
-import { ReactElement } from 'react';
-
-const Container = ({
-  children,
-}: {
-  children: ReactElement<any, any>[] | ReactElement<any, any> | string;
-}) => (
+const Container = ({ children }: { children: any }) => (
   <div
     style={{
       maxWidth: 1200,

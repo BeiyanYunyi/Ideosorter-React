@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material';
+import Stack from '@mui/material/Stack';
 import { Button, Card, CardBody, Text } from 'grommet';
 import { useNavigate } from 'react-router-dom';
 import Container from '../components/Container';

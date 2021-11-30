@@ -1,4 +1,5 @@
-import { Container, Paper, Typography } from '@mui/material';
+import { Box, Card, CardBody, CardHeader, Text } from 'grommet';
+import Container from '../components/Container';
 import Header from '../components/Header';
 import useResult from '../hooks/useResult';
 
@@ -7,17 +8,21 @@ const ResultPage = () => {
   return (
     <Container>
       <Header />
-      <Typography variant="h4" textAlign="center">
-        {result?.result}
-      </Typography>
-      <img
-        src={`/flags/${result?.name}_flag.svg`}
-        alt={result?.name}
-        style={{ maxWidth: '100%' }}
-      />
-      <Paper sx={{ padding: 1 }} elevation={1}>
-        <Typography variant="h6">{result?.desc}</Typography>
-      </Paper>
+      <Box align="center" style={{ marginBottom: 8 }}>
+        <Text size="xlarge">{result?.result}</Text>
+      </Box>
+      <Card>
+        <CardHeader>
+          <img
+            src={`/flags/${result?.name}_flag.svg`}
+            alt={result?.name}
+            style={{ maxWidth: '100%' }}
+          />
+        </CardHeader>
+        <CardBody pad="medium">
+          <Text size="medium">{result?.desc}</Text>
+        </CardBody>
+      </Card>
     </Container>
   );
 };
