@@ -1,4 +1,5 @@
 import { Routes, Route, Outlet } from 'react-router-dom';
+import NotFoundPage from './pages/NotFoundPage';
 import ReloadPrompt from './components/ReloadPrompt';
 import HomePage from './pages/HomePage';
 import InstructionPage from './pages/InstructionPage';
@@ -22,7 +23,7 @@ const App = () => (
       <Route path="/l10n/:l10n/questions/:questionName" element={<QuestionPage />} />
       <Route path="/l10n/:l10n" element={<L10nPage />} />
       <Route path="" element={<HomePage />} />
-      <Route path="*" element={<p>404</p>} />
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   </Routes>
 );

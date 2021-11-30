@@ -1,12 +1,4 @@
-interface Button {
-  name: string;
-  text_en: string;
-  text_cs: string;
-  text_zhCN: string;
-  color: string;
-}
-
-const buttons: Button[] = [
+export default [
   { name: 'yes', text_en: 'Yes', text_cs: 'Ano', text_zhCN: '是', color: '#1b5e20' },
   { name: 'no', text_en: 'No', text_cs: 'Ne', text_zhCN: '否', color: '#b71c1c' },
   {
@@ -90,5 +82,3 @@ const buttons: Button[] = [
     color: '#cd0000',
   },
 ];
-
-export default buttons;

@@ -1,14 +1,15 @@
 import { useParams } from 'react-router-dom';
-import results from '../originData/results';
+import oriResults from '../originData/oriResults';
 import useL10nInfo from './useL10nInfo';
 
 const useResult = () => {
-  const { resultName } = useParams() as { l10n: string; resultName: string };
+  const { resultName } = useParams() as { l10n: string; resultName: keyof typeof oriResults };
   const l10nKey = useL10nInfo().key;
-  const result = results.find((res) => res.name === resultName);
-  if (!result) return null;
+  const result = oriResults[resultName];
+  const keys = Object.keys(oriResults) as (keyof typeof oriResults)[];
+  if (!resultName || !keys.find((key) => key === resultName)) return null;
   return {
-    name: result.name,
+    name: resultName,
     // @ts-ignore
     result: result[`result_${l10nKey}`] || result.result_en,
     // @ts-ignore

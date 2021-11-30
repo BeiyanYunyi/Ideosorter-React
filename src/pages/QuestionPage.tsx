@@ -3,6 +3,7 @@ import { Button, Card, CardBody, Text } from 'grommet';
 import { useNavigate } from 'react-router-dom';
 import Container from '../components/Container';
 import Header from '../components/Header';
+import NotFoundPage from './NotFoundPage';
 import useL10nInfo from '../hooks/useL10nInfo';
 import useQuestion from '../hooks/useQuestion';
 
@@ -10,7 +11,7 @@ const QuestionPage = () => {
   const l10nInfo = useL10nInfo();
   const navigate = useNavigate();
   const question = useQuestion();
-  if (!question) return <Container>No question!</Container>;
+  if (!question) return <NotFoundPage />;
   return (
     <Container>
       <Header />

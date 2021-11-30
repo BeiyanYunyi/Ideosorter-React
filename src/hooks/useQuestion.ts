@@ -1,36 +1,36 @@
 import { useParams } from 'react-router-dom';
 import buttons from '../originData/buttons';
-import questions from '../originData/questions';
+import oriQuestions from '../originData/oriQuestions';
 import useL10nInfo from './useL10nInfo';
 
 const useQuestion = () => {
-  const { questionName } = useParams() as { l10n: string; questionName: string };
+  const { questionName } = useParams() as { l10n: string; questionName: keyof typeof oriQuestions };
   const l10nKey = useL10nInfo().key;
-  const targetQuestion = questions.find((quest) => quest.name === questionName);
-  if (!targetQuestion) return null;
-  const questionOptions = Object.keys(targetQuestion.nextquestion).map((key) => ({
-    opt: key,
-    text:
+
+  // To check the url.
+  const keys = Object.keys(oriQuestions) as (keyof typeof oriQuestions)[];
+  if (!questionName || !keys.find((key) => key === questionName)) return null;
+
+  const targetQuestion = oriQuestions[questionName];
+  const options = targetQuestion.answers.map((key) => {
+    const text =
       buttons.find((btn) => btn.name === key)![`text_${l10nKey}`] ||
-      buttons.find((btn) => btn.name === key)!.text_en,
+      buttons.find((btn) => btn.name === key)!.text_en;
     // @ts-ignore
-    target: targetQuestion?.nextquestion[key] as string,
-    isQuestion: true,
-    color: buttons.find((btn) => btn.name === key)!.color,
-  }));
-  const resultOptions = Object.keys(targetQuestion.results).map((key) => ({
-    opt: key,
-    text:
-      buttons.find((btn) => btn.name === key)![`text_${l10nKey}`] ||
-      buttons.find((btn) => btn.name === key)!.text_en,
-    // @ts-ignore
-    target: targetQuestion.results[key] as string,
-    isQuestion: false,
-    color: buttons.find((btn) => btn.name === key)!.color,
-  }));
-  const options = questionOptions.concat(...resultOptions);
+    const nextQuestion: string = targetQuestion.nextquestion[key];
+    const target: string =
+      nextQuestion || // @ts-ignore
+      targetQuestion.results[key];
+    return {
+      opt: key,
+      text,
+      target,
+      isQuestion: !!nextQuestion,
+      color: buttons.find((btn) => btn.name === key)!.color,
+    };
+  });
   const formattedQuestion = {
-    name: targetQuestion.name,
+    name: questionName,
     question: targetQuestion[`question_${l10nKey}`] || targetQuestion.question_en,
     options,
   };
